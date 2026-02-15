@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabCode Lite - Simple Collaborative Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <span>CollabCode Lite</span>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="room-info" id="roomInfo">
+                    <span class="room-label">Room:</span>
+                    <span class="room-id" id="roomId">---</span>
+                    <button class="btn-icon btn-copy" id="copyRoomLink" title="Copy Room Link">
+                        <i class="fas fa-link"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="participants" id="participants"></div>
+                <div class="connection-status" id="connectionStatus">
+                    <span class="status-dot disconnected"></span>
+                    <span class="status-text">Offline</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Container -->
+        <div class="main-container">
+            <!-- Editor Area -->
+            <main class="editor-area">
+                <div class="editor-wrapper" id="editorWrapper">
+                    <div id="monacoEditor"></div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Status Bar -->
+        <footer class="status-bar">
+            <div class="status-left">
+                <span class="status-item" id="cursorPosition">Ln 1, Col 1</span>
+                <span class="status-item" id="selectionCount">Selected: 0</span>
+            </div>
+            <div class="status-center">
+                <span class="status-item" id="languageMode">Plain Text</span>
+            </div>
+            <div class="status-right">
+                <span class="status-item">UTF-8</span>
+                <span class="status-item">Spaces: 4</span>
+            </div>
+        </footer>
+
+        <!-- Welcome Modal -->
+        <div class="modal" id="welcomeModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><i class="fas fa-code"></i> CollabCode Lite</h2>
+                    <p class="text-muted">Simple real-time collaborative text editor</p>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="usernameInput" placeholder="Enter your name" value="Anonymous">
+                    </div>
+                    <div class="form-group">
+                        <label>Join or Create Room</label>
+                        <div class="join-options">
+                            <button class="btn btn-primary" id="createRoom">
+                                <i class="fas fa-plus"></i> Create New Room
+                            </button>
+                            <div class="divider"><span>or</span></div>
+                            <input type="text" id="roomCodeInput" placeholder="Enter room code">
+                            <button class="btn btn-secondary" id="joinRoom">
+                                <i class="fas fa-sign-in-alt"></i> Join Room
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
