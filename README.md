@@ -1,5 +1,12 @@
 # collabcode-lite
 
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/collabcode-lite/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/collabcode-lite/actions)
+![License](https://img.shields.io/github/license/yksanjo/collabcode-lite)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/collabcode-lite)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/collabcode-lite)
+
 ## Detailed Description
 
 collabcode-lite is maintained as an industry-grade software project with production-ready engineering practices.  
